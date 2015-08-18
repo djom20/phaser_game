@@ -1,17 +1,22 @@
-'use strict';
+player.game = function(game) {};
 
-$(function(){
-	console.log('Init Game');
-
-	window.w = window;
-	$game.init();
-});
-
-window.$game = {
-	init: function(){ /* Init Vars */
-		var game = new Phaser.Game(320, 480, Phaser.CANVAS, 'game');
+player.game.prototype = {
+	preload: function() {
+		this.load.image('bg-sky', 'img/sky.png');
 	},
-	log: function(value){
-		console.log(value);
+	create: function() {
+		/* Config */
+		this.add.sprite(0, 0, 'bg-sky');
+		// this.load.image('bg_sky', 'img/sky.png');
+		this.physics.startSystem(Phaser.Physics.ARCADE);
+		this.audioStatus = true;
+		this.timer = 0;
+		this.totalTimer = 0;
+		this.level = 1;
+		this.maxLevels = 5;
+		this.movementForce = 10;
+
+		/* Add Controllers Keyboards */
+		this.keys = this.game.input.keyboard.createCursorKeys();
 	}
 }
