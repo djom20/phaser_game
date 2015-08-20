@@ -1,10 +1,8 @@
-player.game = function(game) {};
+player.game = function(game){};
 
 player.game.prototype = {
-	preload: function() { // Carga de las imagenes
-		this.load.image('bg-sky', 'assets/images/sky.png');
-		this.load.image('bg-ground', 'assets/images/ground.png');
-		this.load.image('player1', 'assets/images/mario.png');
+	preload: function(){
+		
 	},
 	create: function() {
 		/* Config */
@@ -19,9 +17,9 @@ player.game.prototype = {
 		this.movementForce = 10;
 
 		/* Add player on game */
-		this.playerStartPos = { x: 200, y: 300 };
+		this.playerStartPos = { x: 200, y: 345 };
 		this.player = this.add.sprite(this.playerStartPos.x, this.playerStartPos.y, 'player1');
-		this.player.anchor.set(0.5);
+		this.player.anchor.set(0.2);
 		this.physics.enable(this.player, Phaser.Physics.ARCADE);
 		// this.player.body.setSize(2, 2);
 		this.player.body.bounce.set(0.3, 0.3);
@@ -41,5 +39,5 @@ player.game.prototype = {
 		}else if(this.keys.down.isDown) {
 			this.player.body.velocity.y += this.movementForce;
 		}
-	},
+	}
 }
