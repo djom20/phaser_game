@@ -1,6 +1,6 @@
 var player = {
-	_WIDTH: 320,
-	_HEIGHT: 480
+	_width: 320,
+	_height: 480
 };
 
 player.boot = function(game) {};
