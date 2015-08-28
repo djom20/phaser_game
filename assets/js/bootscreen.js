@@ -1,17 +1,20 @@
 var bootscreen = {
 	preload: function() {
 		/* Main Menu Section */
-		this.load.image('img_mainmenu', 'assets/images/mainmenu_bg.jpg');
-		this.load.image('img_botonplay', 'assets/images/boton_play.png');
-		this.load.image('img_logo', 'assets/images/logo.png');
+		this.game.load.image('img_mainmenu', 'assets/images/mainmenu_bg.jpg');
+		this.game.load.image('img_botonplay', 'assets/images/boton_play.png');
+		this.game.load.image('img_logo', 'assets/images/logo.png');
 
 		/* Game Section */
-		this.load.image('bg-sky', 'assets/images/sky.png');
-		this.load.image('bg-ground', 'assets/images/ground.png');
+		this.game.load.image('bg-sky', 'assets/images/sky.png');
+		this.game.load.image('bg-ground', 'assets/images/ground.png');
 
 		/* Players */
-		this.load.image('player1', 'assets/images/mario.png');
-		this.load.image('player1_jump', 'assets/images/mario_jump.png');
+		this.game.load.image('player1_left', 'assets/images/mario_left.png');
+		this.game.load.image('player1_jump_left', 'assets/images/mario_jump_left.png');
+
+		this.game.load.image('player1_right', 'assets/images/mario_right.png');
+		this.game.load.image('player1_jump_right', 'assets/images/mario_jump_right.png');
 	},
 	create: function() {
 		this.state.start('mainmenu');
